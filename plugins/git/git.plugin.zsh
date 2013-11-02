@@ -157,7 +157,7 @@ alias gfo='git fetch origin'
 
 alias gfg='git ls-files | grep'
 
-alias gg='git gui citool'
+alias gg="gitg 2>/dev/null &"
 alias gga='git gui citool --amend'
 
 function ggf() {

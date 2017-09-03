@@ -149,6 +149,7 @@ function gdv() { git diff -w "$@" | view - }
 compdef _git gdv=git-diff
 
 alias gf='git fetch'
+alias gfetchall='find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} fetch --prune \;'
 # --jobs=<n> was added in git 2.8
 is-at-least 2.8 "$git_version" \
   && alias gfa='git fetch --all --prune --jobs=10' \
@@ -259,6 +260,7 @@ alias gpoat='git push origin --all && git push origin --tags'
 alias gpod='git push origin --delete'
 alias gpr='git pull --rebase'
 alias gpu='git push upstream'
+alias gpullall='find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;'
 alias gpv='git push --verbose'
 
 alias gr='git remote'

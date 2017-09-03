@@ -219,6 +219,7 @@ compdef _git gdnolock=git-diff
 
 alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gf='git fetch'
+alias gfetchall='find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} fetch --prune \;'
 # --jobs=<n> was added in git 2.8
 is-at-least 2.8 "$git_version" \
   && alias gfa='git fetch --all --tags --prune --jobs=10' \
@@ -332,6 +333,7 @@ function ggp() {
 compdef _git ggp=git-checkout
 
 alias gpu='git push upstream'
+alias gpullall='find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin $(git_main_branch) \;'
 alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'

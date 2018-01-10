@@ -1,3 +1,0 @@
-[submodule "vendor/zsh-kubectl-prompt"]
-	path = vendor/zsh-kubectl-prompt
-	url = https://github.com/superbrothers/zsh-kubectl-prompt.git

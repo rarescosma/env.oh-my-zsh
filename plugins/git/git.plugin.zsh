@@ -383,7 +383,7 @@ is-at-least 2.13 "$git_version" \
   && alias gsta='git stash push' \
   || alias gsta='git stash save'
 alias gsts='git stash show --patch'
-alias gst='git status'
+alias gs='git status'
 alias gss='git status --short'
 alias gsb='git status --short --branch'
 alias gsi='git submodule init'

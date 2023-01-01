@@ -5,21 +5,21 @@ _lxd_complete()
   _lxd_names()
   {
     COMPREPLY=( $( compgen -W \
-      "$( lxc list --fast | tail -n +4 | awk '{print $2}' | egrep -v '^(\||^$)' ) $1" "$cur" )
+      "$( lxc list --fast | tail -n +4 | awk '{print $2}' | grep -E -v '^(\||^$)' ) $1" "$cur" )
     )
   }
 
   _lxd_images()
   {
     COMPREPLY=( $( compgen -W \
-      "$( lxc image list | tail -n +4 | awk '{print $2}' | egrep -v '^(\||^$)' )" "$cur" )
+      "$( lxc image list | tail -n +4 | awk '{print $2}' | grep -E -v '^(\||^$)' )" "$cur" )
     )
   }
 
   _lxd_remotes()
   {
     COMPREPLY=( $( compgen -W \
-      "$( lxc remote list | tail -n +4 | awk '{print $2}' | egrep -v '^(\||^$)' )" "$cur" )
+      "$( lxc remote list | tail -n +4 | awk '{print $2}' | grep -E -v '^(\||^$)' )" "$cur" )
     )
   }
 
